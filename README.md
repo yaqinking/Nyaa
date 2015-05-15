@@ -14,6 +14,7 @@ Shortcut | Action
 ⌘3 | Art ゲームCG
 ⌘d | Next Page
 ⌘f | Previous Page
+Double Click | Open download url in browser
 
 ## Thanks
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking)
