@@ -140,9 +140,10 @@
                 if ([substringForMatch isNotEqualTo:@""]) {
                     NSImage *descImage = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:substringForMatch]];
                     if (descImage) {
+                        [self.descriptionImageView setFrameSize:descImage.size];
                         [self.descriptionImageView setImage:descImage];
-                        [self.descriptionImageView sizeToFit];
-                        [self.descriptionImageView setNeedsDisplay];
+                        NSLog(@"ImageView Height %f",self.descriptionImageView.frame.size.height);
+                        NSLog(@"ImageView Wdith %f",self.descriptionImageView.frame.size.width);
                         return ;
                     }
                 }
