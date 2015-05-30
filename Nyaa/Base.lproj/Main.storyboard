@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -711,24 +711,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="1075" height="704"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGu-Az-fHT">
-                                <rect key="frame" x="572" y="15" width="397" height="585"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BGu-Az-fHT">
+                                <rect key="frame" x="355" y="0.0" width="720" height="610"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="mashiro" id="SvC-u3-GeQ"/>
                             </imageView>
-                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr2-T8-qMp">
-                                <rect key="frame" x="26" y="0.0" width="530" height="673"/>
-                                <clipView key="contentView" misplaced="YES" id="Rkb-6A-Opm">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wr2-T8-qMp">
+                                <rect key="frame" x="0.0" y="0.0" width="355" height="704"/>
+                                <clipView key="contentView" id="Rkb-6A-Opm">
                                     <rect key="frame" x="1" y="17" width="238" height="117"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" rowSizeStyle="automatic" headerView="4mb-oL-lj9" viewBased="YES" id="SKH-Gs-ep1">
-                                            <rect key="frame" x="0.0" y="0.0" width="551" height="0.0"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="528" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="MainCell" width="524.8359375" minWidth="40" maxWidth="1000" id="xOH-lv-MqA">
+                                                <tableColumn identifier="MainCell" width="349.8359375" minWidth="40" maxWidth="1000" id="xOH-lv-MqA">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -742,7 +742,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="MainCell" id="rWd-98-02D">
-                                                            <rect key="frame" x="1" y="1" width="525" height="100"/>
+                                                            <rect key="frame" x="1" y="1" width="350" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M4W-BB-UUu">
@@ -783,8 +783,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQg-ex-DtH">
-                                <rect key="frame" x="575" y="634" width="396" height="39"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EQg-ex-DtH">
+                                <rect key="frame" x="361" y="682" width="100" height="22"/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" title="Torrent Title" allowsEditingTextAttributes="YES" id="Uaa-kx-JWL">
                                     <font key="font" metaFont="system" size="18"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -794,8 +794,10 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="BGu-Az-fHT" secondAttribute="trailing" id="38Q-60-v7h"/>
+                            <constraint firstItem="EQg-ex-DtH" firstAttribute="leading" secondItem="wr2-T8-qMp" secondAttribute="trailing" constant="8" id="45W-2Q-qSR"/>
                             <constraint firstAttribute="bottom" secondItem="wr2-T8-qMp" secondAttribute="bottom" id="Dnu-d5-OAs"/>
                             <constraint firstItem="BGu-Az-fHT" firstAttribute="leading" secondItem="wr2-T8-qMp" secondAttribute="trailing" priority="500" id="X1e-sk-LDA"/>
+                            <constraint firstItem="EQg-ex-DtH" firstAttribute="top" secondItem="2T2-hy-KDo" secondAttribute="top" id="e4H-L1-Dd8"/>
                             <constraint firstItem="wr2-T8-qMp" firstAttribute="leading" secondItem="2T2-hy-KDo" secondAttribute="leading" id="eiU-ib-osH"/>
                             <constraint firstAttribute="bottom" secondItem="BGu-Az-fHT" secondAttribute="bottom" id="ixL-m6-Eaz"/>
                             <constraint firstItem="wr2-T8-qMp" firstAttribute="top" secondItem="2T2-hy-KDo" secondAttribute="top" id="ytP-iN-zuy"/>
