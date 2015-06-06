@@ -26,7 +26,7 @@
 @property AFHTTPRequestOperationManager *manager;
 
 
-- (void) setDescriptionPageWithURL:(NSString *)url;
+- (void) configureDescriptionPageWithURL:(NSString *)url;
 
 - (void)configureMenuItems;
 - (void)configureTableViewDataSourceWithURLString:(NSString *)urlString;

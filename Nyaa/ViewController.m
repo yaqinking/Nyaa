@@ -65,7 +65,7 @@
     t = [self.list objectAtIndex:[self.tableView selectedRow]];
     NSLog(@"Torrent Page URL -> %@",t.detailURL);
     [self.descriptionTextField setStringValue:t.torrentName];
-    [self setDescriptionPageWithURL:t.detailURL];
+    [self configureDescriptionPageWithURL:t.detailURL];
     
     
 }
@@ -138,28 +138,34 @@
                     return ;
                 }
                 if ([substringForMatch isNotEqualTo:@""]) {
-                    NSImage *descImage = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:substringForMatch]];
-                    if (descImage) {
-                        [self.descriptionImageView setFrameSize:descImage.size];
-                        [self.descriptionImageView setImage:descImage];
-                        NSLog(@"ImageView Height %f",self.descriptionImageView.frame.size.height);
-                        NSLog(@"ImageView Wdith %f",self.descriptionImageView.frame.size.width);
-                        return ;
-                    }
+                    NSURL *imagURL = [NSURL URLWithString:substringForMatch];
+                    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:imagURL];
+                    [NSURLConnection sendAsynchronousRequest:urlRequest
+                                                       queue:[NSOperationQueue mainQueue]
+                                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                                               if (connectionError == nil) {
+                                                   NSImage *descImage = [[NSImage alloc] initWithData:data];
+                                                   if (descImage) {
+                                                       [self.descriptionImageView setFrameSize:descImage.size];
+                                                       [self.descriptionImageView setImage:descImage];
+                                                       NSLog(@"ImageView Height %f",self.descriptionImageView.frame.size.height);
+                                                       NSLog(@"ImageView Wdith %f",self.descriptionImageView.frame.size.width);
+                                                       return ;
+                                                   }
+ 
+                                               }
+                                           }];
                 }
-                
-                
-                
             }
             //Default display image
-            NSImage *mashiro = [NSImage imageNamed:@"mashiro"];
-            [self.descriptionImageView setImage:mashiro];
+//            NSImage *mashiro = [NSImage imageNamed:@"mashiro"];
+//            [self.descriptionImageView setImage:mashiro];
         }
         
     }
     
 }
-- (void)setDescriptionPageWithURL:(NSString *)url {
+- (void)configureDescriptionPageWithURL:(NSString *)url {
     [self.manager GET:url
       parameters:nil
          success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseDocument) {
@@ -343,10 +349,7 @@
 - (void)searchSukebei:(id)sender {
     
 }
-
-
 @end
-
 
 #pragma mark - Other Document
 /*
@@ -398,3 +401,5 @@
  [subItem1 setTarget:self];
  [subItem1 setAction:@selector(loadCategoryPage:)];
  */
+
+
