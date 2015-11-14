@@ -32,6 +32,7 @@
 		1DFA37E67D74E78297F570F4 /* Pods-Nyaa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nyaa.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nyaa/Pods-Nyaa.release.xcconfig"; sourceTree = "<group>"; };
 		6F8982D201661B138FCE6A82 /* Pods-Nyaa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nyaa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nyaa/Pods-Nyaa.debug.xcconfig"; sourceTree = "<group>"; };
 		BC4F59F5C089A6156DF90442 /* libPods-Nyaa.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nyaa.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BCCE431BF6FABC001901DE /* Nyaa.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Nyaa.entitlements; sourceTree = "<group>"; };
 		F4FDB8E51B02EF470025E9CD /* Nyaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nyaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FDB8E91B02EF470025E9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FDB8EA1B02EF470025E9CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -100,6 +101,7 @@
 		F4FDB8E71B02EF470025E9CD /* Nyaa */ = {
 			isa = PBXGroup;
 			children = (
+				F4BCCE431BF6FABC001901DE /* Nyaa.entitlements */,
 				F4FDB90E1B02F1C60025E9CD /* NyaaAPI.h */,
 				F4FDB90B1B02F1B00025E9CD /* Torrent.h */,
 				F4FDB90C1B02F1B00025E9CD /* Torrent.m */,
@@ -201,6 +203,12 @@
 				TargetAttributes = {
 					F4FDB8E41B02EF470025E9CD = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 2RX98WKS48;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					F4FDB8FA1B02EF480025E9CD = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -406,6 +414,8 @@
 			baseConfigurationReference = 6F8982D201661B138FCE6A82 /* Pods-Nyaa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nyaa/Nyaa.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Nyaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -418,6 +428,8 @@
 			baseConfigurationReference = 1DFA37E67D74E78297F570F4 /* Pods-Nyaa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Nyaa/Nyaa.entitlements;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Nyaa/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
